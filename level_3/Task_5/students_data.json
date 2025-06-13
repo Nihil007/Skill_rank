@@ -1,0 +1,46 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "John Smith",
+            "age": 20,
+            "courses": [
+                {
+                    "code": "CS101",
+                    "name": "Introduction to Programming",
+                    "grade": "A"
+                },
+                {
+                    "code": "MT102",
+                    "name": "Mathematics",
+                    "grade": "B+"
+                }
+            ],
+            "contact": {
+                "email": "john.smith@example.com",
+                "phone": "123-456-7890"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Emma Wilson",
+            "age": 21,
+            "courses": [
+                {
+                    "code": "CS101",
+                    "name": "Introduction to Programming",
+                    "grade": "A-"
+                },
+                {
+                    "code": "PH201",
+                    "name": "Physics",
+                    "grade": "B"
+                }
+            ],
+            "contact": {
+                "email": "emma.w@example.com",
+                "phone": "098-765-4321"
+            }
+        }
+    ]
+}
