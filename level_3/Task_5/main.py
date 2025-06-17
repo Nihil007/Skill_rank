@@ -6,14 +6,16 @@ from health import router as health_router
 from logging_config import setup_logging
 # Import router from students.py
 from students import router as students_router
-app.include_router(students_router)
 
+# Instance of the FastAPI app
+app = FastAPI(title="FastAPI for Health and Student")
+
+# Register the students router
+app.include_router(students_router)
 
 # Set up logging configuration
 setup_logging()
 
-# Instance of the FastAPI app
-app = FastAPI(title="FastAPI for Health and Student")
 
 # Register the health check router
 app.include_router(health_router)
