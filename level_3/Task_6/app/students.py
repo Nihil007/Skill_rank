@@ -58,7 +58,7 @@ def CreateStudent(student: StudentModel):
         logger.error(f"Error adding student: {e}")
         raise HTTPException(status_code=400, detail=str(e))
 
-# GET - Retrieve a student by ID or list students by course
+# GET - Retrieve a student by ID, list students by course, or get all students
 @router.get("/api/students")
 def GetStudents(studentId: Optional[int] = None, courseCode: Optional[str] = None):
     try:
@@ -75,9 +75,9 @@ def GetStudents(studentId: Optional[int] = None, courseCode: Optional[str] = Non
             students = GetCourseStudents(data, courseCode)
             return students
 
-        # Raise error if neither query parameter is provided
+        # Return all students if no parameters provided
         else:
-            raise ValueError("Either 'studentId' or 'courseCode' must be provided.")
+            return {"students": data.get("students", [])}
 
     except Exception as e:
         # Log and return any error that occurs

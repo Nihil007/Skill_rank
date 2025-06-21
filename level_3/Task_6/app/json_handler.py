@@ -80,17 +80,17 @@ def GetStudentDetails(data: Dict[str, Any], studentId: int) -> Dict[str, Any]:
     logging.error(f"Student with ID {studentId} not found.")
     raise ValueError(f"Student with ID {studentId} not found.")
 
-def GetCourseStudents(data: Dict[str, Any], courseCode: str) -> List[Dict[str, Union[str, int]]]:
+def GetCourseStudents(data: Dict[str, Any], courseCode: str) -> List[Dict[str, Any]]:
     """
     Get a list of students who are enrolled in a specific course.
-    Returns a list of dictionaries containing student names and IDs.
+    Returns a list of dictionaries containing full student details.
     Raises error if no students are found in the course.
     """
     enrolledStudents = []
     for student in data.get('students', []):
         for course in student['courses']:
             if course['code'] == courseCode:
-                enrolledStudents.append({'id': student['id'], 'name': student['name']})
+                enrolledStudents.append(student)
                 break  # No need to check more courses for this student
 
     if not enrolledStudents:
