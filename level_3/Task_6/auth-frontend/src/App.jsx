@@ -4,7 +4,7 @@ import Login from '@/components/Auth/Login';
 import Home from '@/components/Home';
 import Dashboard from '@/components/Dashboard';
 import ResetPassword from '@/components/Auth/ResetPass';
-import ForgotPassword from '@/components/auth/ForgotPass';
+import ForgotPassword from '@/components/Auth/ForgotPass';
 import StudentsDashboard from '@/components/StudentsDashboard';
 
 function App() {
