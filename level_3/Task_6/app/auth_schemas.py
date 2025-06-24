@@ -1,10 +1,10 @@
-from pydantic import BaseModel, EmailStr, Field, constr, validator
+from pydantic import BaseModel, EmailStr, Field, validator
 from typing import Optional, Annotated
 
 
 # Schema for user registration request
 class RegisterUserRequest(BaseModel):
-    Username: Annotated[str, constr(min_length=3, max_length=30, regex=r"^[a-zA-Z0-9_.-]+$")]
+    Username: Annotated[str, Field(min_length=3, max_length=30, pattern=r"^[a-zA-Z0-9_.-]+$")]
     Email: EmailStr
     Password: str
     ConfirmPassword: str

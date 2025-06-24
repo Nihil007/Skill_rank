@@ -8,4 +8,4 @@ python-jose
 aiosmtplib
 pytest
 httpx
-pydantic 
+pydantic>=2.0.0 
