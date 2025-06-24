@@ -2,4 +2,10 @@ fastapi
 uvicorn
 pymongo
 python-dotenv
-email-validator 
+email-validator
+passlib
+python-jose
+aiosmtplib
+pytest
+httpx
+pydantic 
